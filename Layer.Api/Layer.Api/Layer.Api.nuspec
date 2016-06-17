@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>layer.dotnet</id>
+    <version>0.0.1</version>
+    <title>Layer API .NET client</title>
+    <authors>ahanoff</authors>
+    <owners>ahanoff</owners>
+    <projectUrl>https://github.com/ahanoff/layer-api</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Layer API .NET portable library</description>
+    <releaseNotes>v0.0.1 Added initial version of platform api.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Layer</tags>
+  </metadata>
+</package>
