@@ -1,4 +1,4 @@
-﻿namespace Layer.Api
+﻿namespace Layer.Api.Contracts
 {
     public interface ILayerConversationMetadata
     {
