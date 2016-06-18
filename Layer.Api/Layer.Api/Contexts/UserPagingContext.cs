@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Layer.Api.Contexts
+﻿namespace Layer.Api.Contexts
 {
     public class UserPagingContext : PagingContext
     {
