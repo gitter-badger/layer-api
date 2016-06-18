@@ -19,7 +19,7 @@ namespace Layer.Api
             get
             {
                 Guid result;
-                if (Guid.TryParse(Id, out result))
+                if (!string.IsNullOrEmpty(Id) && Guid.TryParse(Id.Replace("layer:///conversations/", string.Empty), out result))
                 {
                     return result;
                 }
