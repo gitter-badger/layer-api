@@ -1,5 +1,3 @@
-# layer-api
-
 # Layer API for .NET
 
 A .NET portable library, which provides a wrapper for the [Layer](https://layer.com) Platform API.
