@@ -4,6 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Layer.Api.Contexts;
+using Layer.Api.Contracts;
+using Layer.Api.Models;
 
 using Newtonsoft.Json;
 
@@ -37,22 +40,37 @@ namespace Layer.Api
             GC.SuppressFinalize(this);
         }
 
-        public async Task<LayerListResource<LayerConversation<T>>> GetConversationsAsync<T>(string userId, CancellationToken cancellationToken, int pageSize = 100, string conversationId = null)
-            where T : ILayerConversationMetadata
+        public async Task<LayerListResource<LayerConversation<T>>> GetConversationsAsync<T>(UserPagingContext context, CancellationToken cancellationToken) where T : ILayerConversationMetadata
         {
-            var url = $"https://api.layer.com/apps/{_appId}/users/{userId}/conversations?page_size={pageSize}";
-
-            if (!string.IsNullOrEmpty(conversationId))
+            if (context == null)
             {
-                url += $"&from_id={conversationId}";
+                throw new ArgumentNullException(nameof(context));
             }
+
+            var url = $"https://api.layer.com/apps/{_appId}/users/{context.UserId}/conversations?page_size={context.PageSize}";
+
+            if (!string.IsNullOrEmpty(context.ConversationId))
+            {
+                url += $"&from_id={context.ConversationId}";
+            }
+
             return await GetListResource<LayerConversation<T>>(url, cancellationToken);
         }
 
-        public async Task<IEnumerable<LayerConversation<T>>> GetConversationEnumerableAsync<T>(string userId, CancellationToken cancellationToken, int pageSize = 100, string conversationId = null) where T : ILayerConversationMetadata
+        public async Task<IEnumerable<LayerConversation<T>>> GetConversationEnumerableAsync<T>(UserPagingContext context, CancellationToken cancellationToken) where T : ILayerConversationMetadata
         {
-            var listResource = await GetConversationsAsync<T>(userId, cancellationToken, pageSize, conversationId);
+            var listResource = await GetConversationsAsync<T>(context, cancellationToken);
             return listResource.Data;
+        }
+
+        public Task<LayerConversation<T>> GetConversationAsync<T>(UserContext context, CancellationToken cancellationToken) where T : ILayerConversationMetadata
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<LayerConversation<T>>> GetConversationsAsync<T>(PagingContext context, CancellationToken cancellationToken) where T : ILayerConversationMetadata
+        {
+            throw new NotImplementedException();
         }
 
         private async Task<LayerListResource<T>> GetListResource<T>(string url, CancellationToken cancellationToken)

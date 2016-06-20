@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Layer.Api
+namespace Layer.Api.Models
 {
     public class LayerListResource<T>
     {
