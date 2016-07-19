@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Layer.Api;
+using Layer.Api.Contracts;
+
+using NUnit.Framework;
 
 namespace Layer.Tests
 {
@@ -7,7 +10,7 @@ namespace Layer.Tests
         [Test]
         public async void Test()
         {
-            
+            ILayerPlatformApi platformApi = new LayerPlatformApi(null, null, null, null);
         }
     }
 }

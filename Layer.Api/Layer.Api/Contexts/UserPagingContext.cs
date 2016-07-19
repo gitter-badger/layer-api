@@ -6,6 +6,7 @@
         {
             UserId = userId;
         }
+
         public string UserId { get; set; }
     }
 }

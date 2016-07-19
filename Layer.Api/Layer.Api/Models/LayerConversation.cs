@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Layer.Api.Contracts;
-
 using Newtonsoft.Json;
 
-namespace Layer.Api
+namespace Layer.Api.Models
 {
     public class LayerConversation<TMetadata>
-        where TMetadata : ILayerConversationMetadata
     {
         [JsonProperty("id")]
         public string Id { get; set; }

@@ -10,5 +10,14 @@ namespace Layer.Api
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             return request;
         }
+
+        public static HttpRequestMessage SetContentType(this HttpRequestMessage request)
+        {
+            request.Content.Headers.ContentType = request.Method.Method == "PATCH"
+                ? new MediaTypeHeaderValue("application/vnd.layer-patch+json")
+                : new MediaTypeHeaderValue("application/json");
+
+            return request;
+        }
     }
 }

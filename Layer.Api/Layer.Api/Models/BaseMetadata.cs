@@ -1,8 +1,6 @@
-﻿using Layer.Api.Contracts;
-
-namespace Layer.Api.Models
+﻿namespace Layer.Api.Models
 {
-    public class BaseMetadata : ILayerConversationMetadata
+    public class BaseMetadata
     {
         public string Title { get; set; }
     }

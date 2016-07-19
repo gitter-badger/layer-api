@@ -34,11 +34,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Operations\AddBlocksOperation.cs" />
+    <Compile Include="BaseLayerApi.cs" />
+    <Compile Include="Contexts\ContentObject.cs" />
+    <Compile Include="Contracts\IConversationApi.cs" />
+    <Compile Include="Contracts\IDataServiceApi.cs" />
+    <Compile Include="Contracts\IMessagesApi.cs" />
+    <Compile Include="Contracts\IUserApi.cs" />
+    <Compile Include="Contexts\MessageContext.cs" />
+    <Compile Include="Contexts\MessagePagingContext.cs" />
+    <Compile Include="ConversationLayerApi.cs" />
+    <Compile Include="Operations\LayerOperation.cs" />
+    <Compile Include="Models\LayerUser.cs" />
+    <Compile Include="Models\IdentityObject.cs" />
+    <Compile Include="LayerConfiguration.cs" />
+    <Compile Include="MessagesLayerApi.cs" />
     <Compile Include="Models\BaseMetadata.cs" />
     <Compile Include="Models\ConversationSort.cs" />
-    <Compile Include="Contracts\ILayerConversationMetadata.cs" />
     <Compile Include="Contracts\ILayerPlatformApi.cs" />
-    <Compile Include="LayerConversation.cs" />
+    <Compile Include="Models\LayerConversation.cs" />
     <Compile Include="Models\LayerListResource.cs" />
     <Compile Include="Models\LayerMessage.cs" />
     <Compile Include="LayerPlatformApi.cs" />
@@ -47,6 +61,11 @@
     <Compile Include="RequestExtensions.cs" />
     <Compile Include="Contexts\UserContext.cs" />
     <Compile Include="Contexts\UserPagingContext.cs" />
+    <Compile Include="Models\UserBadge.cs" />
+    <Compile Include="Operations\SetSessionTtlOperation.cs" />
+    <Compile Include="Operations\SuspendOperation.cs" />
+    <Compile Include="Models\UserId.cs" />
+    <Compile Include="UserLayerApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
