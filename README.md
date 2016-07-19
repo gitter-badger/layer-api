@@ -7,4 +7,4 @@ The Layer Platform API is designed to empower developers to automate, extend, an
 This library now supports requests from your **servers** only.
 
 
-https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true
+<image src="https://ci.appveyor.com/api/projects/status/wtgi3krjvras3nji/branch/master?svg=true" width="300">
